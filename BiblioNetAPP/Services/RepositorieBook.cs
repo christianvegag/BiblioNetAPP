@@ -6,7 +6,7 @@ namespace BiblioNetAPP.Services
 {
     public interface IRepositorieBook
     {
-        void Create(Book book)
+        void Create(Book book);
     }
     public class RepositorieBook : IRepositorieBook
     {
@@ -20,7 +20,7 @@ namespace BiblioNetAPP.Services
             using var connection = new SqlConnection(connectionString);
             var id = connection.QuerySingle<int>($@"INSERT INTO Libros 
                                                 (IdEditorial,Titulo, FechaPub, Paginas) 
-                                                VALUES (@IdEditorial,@Titulo, @FechaPub, @Paginas); SELECT SCOPE_IDENTITY();", book);
+                                                VALUES (@IdEditorial,@Title, @FechaPub, @Pages); SELECT SCOPE_IDENTITY();", book);
             book.Id = id;
         }
     }

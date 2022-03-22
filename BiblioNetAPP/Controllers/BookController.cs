@@ -26,8 +26,10 @@ namespace BiblioNetAPP.Controllers
             }
 
             book.IdEditorial = 1;
-            book.FechaPub = DateOnly("dd-MM-yyyy");
+            book.FechaPub = DateTime.Today;
+            book.Pages = 150;
 
+            repositorieBook.Create(book);
             return View();
         }
     }

@@ -9,7 +9,10 @@ namespace BiblioNetAPP.Models
 
         public int IdEditorial { get; set; }
         public string Title { get; set; }
-        public DateOnly FechaPub { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime FechaPub { get; set; }
         public int Pages { get; set; }
     }
 }
