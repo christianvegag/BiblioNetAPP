@@ -6,8 +6,10 @@ namespace BiblioNetAPP.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "{0} is required")]
-        public string BookName { get; set; }
-        public string Author { get; set; }
-        public double Price { get; set; }
+
+        public int IdEditorial { get; set; }
+        public string Title { get; set; }
+        public DateOnly FechaPub { get; set; }
+        public int Pages { get; set; }
     }
 }
